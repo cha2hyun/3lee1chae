@@ -12,7 +12,7 @@
 <p>{{object.date}}</p>
 {% if object.authors == user%}
 
-<a href="{% url 'seondboard:board_delete' pk=object.id %}" class="btn btn-outline-danger btn-sm float-right">
+<a href="{% url 'secondboard:board_delete' pk=object.id %}" class="btn btn-outline-danger btn-sm float-right">
     Delete
 </a>
 <a href="{% url 'secondboard:board_update' pk=object.id %}" class="btn btn-outline-success btn-sm float-right">

@@ -22,7 +22,7 @@ class BoardUploadView(CreateView):
     template_name = 'secondboard/upload.html'
 
     def form_valid(self, form):
-        form.instance.author_id = self.request.user.id
+        form.instance.authors_id = self.request.user.id
         if form.is_valid():
             form.instance.save()
             return redirect('/secondboards')
