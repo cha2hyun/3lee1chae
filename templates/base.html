@@ -21,7 +21,17 @@
 </head>
 
 <body>
+    <div class="container">
+        <header calss="header clear fix">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="nav">
+                    <li class="nav-item"><a href="{% url 'board:board_list' %}" class="nav-link">삽니다</a></li>
+                    <li class="nav-item"><a href="{% url 'secondboard:board_list' %}" class="nav-link">팝니다</a></li>
 
+                </ul>
+            </nav>
+        </header>
+    </div>
 
     {% block content %}{% endblock %}
 

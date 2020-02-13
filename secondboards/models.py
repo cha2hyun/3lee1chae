@@ -5,8 +5,9 @@ from django.urls import reverse
 
 
 class Board(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='sellphotos')
+    authors = models.ForeignKey(
+        User, related_name='second', on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='buyphotos')
     text = models.TextField()
     date = models.DateField()
 
@@ -17,7 +18,7 @@ class Board(models.Model):
         ordering = ['-updated']
 
     def __str__(self):
-        return f'{self.author.username}'
+        return f'{self.authors.username}'
 
     def get_absolute_url(self):
-        return reverse('board:board_detail', args=[str(self.id)])
+        return reverse('secondboard:board_detail', args=[str(self.id)])

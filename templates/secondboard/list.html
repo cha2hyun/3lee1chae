@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}- List{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+{%for post in object_list %}
+
+<ul>
+    <li>
+        <a href="{% url 'secondboard:board_detail' pk=post.id %}">{{post.text}}</a>
+    </li>
+</ul>
+{% endfor %}
+<p class="text-right">
+    <a href="{% url 'secondboard:board_upload' %}" class="btn btn-xs btn-success">업로드하기</a>
+    <a href="{% url 'account:logout' %}" class="btn btn-xs btn-success">Logout</a>
+</p>
+{% else %}
+<a href="{% url 'account:login' %}" class="btn btn-xs btn-success">Login</a>
+{% endif %}
+
+{% endblock %}

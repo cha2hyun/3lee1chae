@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 from .models import Board
 
-app_name = 'board'
+app_name = 'secondboard'
 
 urlpatterns = [
     path('', BoardListView.as_view(), name='board_list'),
